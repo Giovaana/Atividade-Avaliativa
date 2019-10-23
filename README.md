@@ -73,4 +73,75 @@ class Arara{
  }
 }
 
+---------------------------------------------- ATIVIDADE PARA PONTO -------------------------------------------------
+
+
+void main() {
+
+Banco b= new Banco('Eu',123,'Normal', 1000.00);
+  print('----------------BANCO--------------------');
+  b.Criar();
+  print('-----------------------------------------');
+  b.Deposito(50.00);
+  print('-----------------------------------------');
+  b.Saque(100.00);
+  print('-----------------------------------------');
+  b.Saldo();
+  print('-----------------------------------------');
+  b.Transferencia(100.00);
+}
+
+class Banco{
+  String nome;
+  int numc;
+  String tipo;
+  double saldoatual;
+  double valordep;
+  double valorsaque;
+  double transferencia;
+  
+  Banco(this.nome, this.numc, this.tipo,this.saldoatual);
+  
+  void Criar(){
+    print('$nome sua conta foi criada!');
+    print('Seu saldo atual é de: $saldoatual');
+  }
+  void Saldo(){
+   print('Saldo atual: ${this.saldoatual}'); 
+  }
+  void Deposito(double a){
+    this.saldoatual=this.saldoatual+a; 
+    print('Depósito realizadoo com sucesso!');
+    print('Seu saldo atual é de: ');
+    print(saldoatual);
+  }
+   void Saque(double b){
+     if(saldoatual>=b){
+    this.saldoatual=this.saldoatual-b;
+     print('Saque realizadoo com sucesso!');
+     print('Seu saldo atual é de: ');
+    print(saldoatual);
+     }
+     else{
+       print('Saldo insuficiente');
+     }
+   }
+  void Transferencia(double c){
+    print('Transferência realizada com sucesso!');
+    print('Seu saldo atual é de: ');
+    print(saldoatual-c);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
   
